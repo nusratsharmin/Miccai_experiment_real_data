@@ -169,7 +169,7 @@ def mapping( source_tractography_streamlines, target_tractography_streamlines,su
     X = fastPFP_faster(B, A, alpha=0.9, threshold1=1.0e-4, threshold2=1.0e-4, max_iter1=200, max_iter2=200)
     
     P = greedy_assignment(X)
-    #mapping=P.argmax(1)
+   
     mapping_idx=P.argmax(0)
     mapped_tractography=[target_tractography[i] for i in mapping_idx]
     out_name = "/home/nusrat/clu_com/mapping_result/"+subject_pair+'multiple_tract'+'.txt'
